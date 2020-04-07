@@ -5,4 +5,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 HOST=$1
-curl -k -v -d @./mock-credential.json -H 'Content-Type: application/json' -H 'Accept: application/json' https://"$HOST"/vc-issuer/issue | json_pp
+TOKEN=$2
+curl -k -v -d @./mock-credential.json -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H "Authorization: Bearer $TOKEN" \
+  https://"$HOST"/vc-issuer/issue | json_pp
