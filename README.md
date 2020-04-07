@@ -2,5 +2,5 @@
 
 ## Issue a Credential
 ```sh
-./issue-credential.sh localhost:39443
+./issue-credential.sh localhost:39443 AN_APPLICATION_TOKEN
 ```
