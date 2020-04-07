@@ -5,4 +5,9 @@ if [ -z "$1" ]; then
   exit 1
 fi
 HOST=$1
-curl -k -v -d @./mock-credential.json -H 'Content-Type: application/json' -H 'Accept: application/json' https://"$HOST"/credentials/issueCredential | json_pp
+UUID=$(uuidgen)
+CREDENTIAL=$(<./mock-credential.json)
+curl -k -v -d "${CREDENTIAL/_UUID_/$UUID}" \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  https://"$HOST"/credentials/issueCredential | json_pp
