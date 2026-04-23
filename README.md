@@ -1,4 +1,4 @@
-> [!INFO]
+> [!NOTE]
 > This has been replaced by the official
 > [W3C Verifiable Credential API for Lifecycle Management (fka VC API) test suite](https://github.com/w3c-ccg/vc-api-issuer-test-suite/).
 
